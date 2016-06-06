@@ -1,0 +1,2 @@
+let g:spf13_bundle_groups=['general', 'writing', 'youcompleteme', 'programming', 'php', 'python', 'javascript', 'html', 'misc',]
+
