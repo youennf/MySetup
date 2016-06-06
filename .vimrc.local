@@ -1,0 +1,42 @@
+UnBundle 'Shougo/neocomplcache'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'tpope/vim-dispatch'
+Bundle 'ConradIrwin/vim-bracketed-paste'
+Bundle 'rking/ag.vim'
+
+let g:ycm_global_ycm_extra_conf = "~/dev/WebKit/Tools/gtk/ycm_extra_conf.py"
+let g:ycm_goto_buffer_command = 'new-tab'
+set makeprg=~/dev/WebKit/Tools/Scripts/build-webkit\ --gtk
+set mouse=
+
+let g:ctrlp_cmd = 'CtrlPMixed'
+
+nnoremap <silent> H gT
+nnoremap <silent> L gt
+nnoremap <silent> <C-Left> :tabprevious<CR>
+nnoremap <silent> <C-Right> :tabnext<CR>
+nnoremap <silent> <C-K> :wincmd k<CR>
+nnoremap <silent> <C-J> :wincmd j<CR>
+nnoremap <silent> <C-JH> :wincmd h<CR>
+nnoremap <silent> <C-JL> :wincmd l<CR>
+
+nnoremap <leader>gl :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>gf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+nmap <leader>s <Plug>GitGutterNextHunk
+nmap <leader>q <Plug>GitGutterPrevHunk
+
+set wrap
+set incsearch
+autocmd FileType changeLog let b:did_indent = 1
+autocmd FileType ChangeLog let b:did_indent = 1
+autocmd FileType ChangeLog+ let b:did_indent = 1
+
+autocmd QuickFixCmdPre make ~dev/WebKit/WebKitBuild/Release
+
+let g:gitgutter_realtime = 1
+
+let g:ycm_filetype_blacklist = { 'changelog': 1,  'Changelog+': 1,  'Changelog': 1  }
+let g:ycm_filetype_whitelist = { 'cpp': 1, 'h': 1 }
+let g:ycm_filetype_specific_completion_to_disable = { 'changeLog': 1, 'ChangeLog+': 1 , 'ChangeLog': 1 }
