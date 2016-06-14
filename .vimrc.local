@@ -6,10 +6,12 @@ Bundle 'rking/ag.vim'
 
 let g:ycm_global_ycm_extra_conf = "~/dev/WebKit/Tools/gtk/ycm_extra_conf.py"
 let g:ycm_goto_buffer_command = 'new-tab'
-set makeprg=~/dev/WebKit/Tools/Scripts/build-webkit\ --gtk
+set makeprg=/Users/youenn/Documents/WebKit/Tools/Scripts/build-webkit
 set mouse=
 
 let g:ctrlp_cmd = 'CtrlPMixed'
+
+autocmd Filetype python,cpp,c,perl match Error /\s\+$/
 
 nnoremap <silent> H gT
 nnoremap <silent> L gt
@@ -29,9 +31,9 @@ nmap <leader>q <Plug>GitGutterPrevHunk
 
 set wrap
 set incsearch
-autocmd FileType changeLog let b:did_indent = 1
-autocmd FileType ChangeLog let b:did_indent = 1
-autocmd FileType ChangeLog+ let b:did_indent = 1
+
+autocmd BufRead ChangeLog*  :set expandtab
+autocmd BufRead ChangeLog*  :set tw=120
 
 autocmd QuickFixCmdPre make ~dev/WebKit/WebKitBuild/Release
 
