@@ -1,10 +1,6 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/youenn/.oh-my-zsh
 
-export http_proxy=http://tortoisefablet:b0C14wyHi42P@172.19.77.103:8080
-export https_proxy=http://tortoisefablet:b0C14wyHi42P@172.19.77.103:8080
-export no_proxy="localhost,127.0.0.0/8,::1,www2.localhost,www1.localhost,xn--n8j6ds53lwwkrqhv28a.localhost,xn--lve-6lad.localhost,.crf.canon.fr"
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
